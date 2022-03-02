@@ -11,6 +11,8 @@
                 </div>
             </div>
 */
+import Header from "../Header";
+import Footer from "../Footer";
 import Hero from "./Hero";
 import Banner from "./Banner";
 import Card from "./Card";
@@ -37,13 +39,14 @@ const Home = () => {
       setBanner(resp.data);
     });
     //Posts Mais Vistos
-    api.get("posts?limit_3").then((resp) => {
+    api.get("posts?_limit=3").then((resp) => {
       setMostseen(resp.data);
     });
   }, []);
 
   return (
     <>
+      <Header />
       <Hero />
       <section className="container">
         <div className="row">
@@ -72,12 +75,15 @@ const Home = () => {
           pharetra ut ac, pellentesque.
         </p>
         <div className="row mt-4">
-          <Card />
-          <Card />
-          <Card />
+          {mostseen.map((item) => {
+            return <Card key={item.id} content={item} />;
+          })}
         </div>
       </section>
-      <Banner />
+      {banner.map((item) => {
+        return <Banner key={item.id} content={item} />;
+      })}
+      <Footer />
     </>
   );
 };
