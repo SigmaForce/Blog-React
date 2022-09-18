@@ -34,7 +34,7 @@ const Footer = () => {
               <h4>Categorias</h4>
               <div className="flex-start-column mt-2">
                 <a href="" className="color-gray link-footer">
-                  Tecnologia
+                  (99) 99999-9999
                 </a>
                 <a href="" className="color-gray link-footer">
                   Games

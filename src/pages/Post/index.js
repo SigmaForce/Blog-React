@@ -11,7 +11,7 @@ const Post = () => {
   const [post, setPost] = useState([]);
   const [user, setUser] = useState([]);
 
-  //console.log(idPost);
+  console.log(idPost);
 
   useEffect(() => {
     if (idPost) {
